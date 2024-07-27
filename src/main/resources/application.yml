@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: conceptzero
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CONCEPTZERO_GOOGLE_CLIENT_ID}
+            client-secret: ${CONCEPTZERO_GOOGLE_CLIENT_SECRET}
+            scope: profile, email
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
